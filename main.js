@@ -1,16 +1,17 @@
 const path = require('path');
 
-// TODO: Use path.join to join two file path segments
-if (process.argv.length < 4) {
-    console.error('Usage: node joinPaths.js <segment1> <segment2>');
-    process.exit(1);
-  }
-  
-  const segment1 = process.argv[2];
-  const segment2 = process.argv[3];
-  
-  const joinedPath = path.join(segment1, segment2);
+// Ensure the script is called with the correct number of arguments
+if (process.argv.length !== 4) {
+  console.error('Usage: node app.js <pathSegment1> <pathSegment2>');
+  process.exit(1);
+}
 
-// TODO: Print the resulting path to the console
-console.log(`Joined path: ${joinedPath}`);
+// Get the file path segments from command-line arguments
+const pathSegment1 = process.argv[2];
+const pathSegment2 = process.argv[3];
 
+// Join the path segments
+const joinedPath = path.join(pathSegment1, pathSegment2);
+
+// Print the joined path to the console
+console.log(joinedPath);
